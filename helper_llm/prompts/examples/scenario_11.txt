@@ -1,0 +1,8 @@
+dialogue: <Commander> place the green block in the bowl closest to the middle
+Python script:
+bowl_names = [name for name in get_obj_names() if 'bowl' in name]
+bowl_positions = np.array([get_obj_pos(name) for name in bowl_names])
+middle_pt = denormalize_xy([0.5, 0.5])
+closest_idx = np.argmin(np.linalg.norm(bowl_positions - middle_pt, axis=1))
+bowl = bowl_names[closest_idx]
+put_first_on_second('green block', bowl)

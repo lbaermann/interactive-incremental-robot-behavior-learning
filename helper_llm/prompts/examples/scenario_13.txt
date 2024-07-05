@@ -1,0 +1,9 @@
+dialogue: <Commander> stack the blocks that are close to the red bowl
+Python script:
+block_names = [name for name in get_obj_names() if 'block' in name]
+close_blocks = []
+for block in block_names:
+    if np.linalg.norm(get_obj_pos('red bowl') - get_obj_pos(block)) < 0.1:
+        close_blocks.append(block)
+for i in range(len(close_blocks) - 1):
+    put_first_on_second(close_blocks[i + 1], close_blocks[i])

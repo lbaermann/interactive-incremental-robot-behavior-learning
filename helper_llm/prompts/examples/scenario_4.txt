@@ -1,0 +1,7 @@
+dialogue: <Commander> point gripper to any three points in a horizontal line in the middle
+Python script:
+start_pos = denormalize_xy([0.1, 0.5])
+end_pos = denormalize_xy([0.9, 0.5])
+points = np.linspace(start=start_pos, stop=end_pos, num=3)
+for point in points:
+    point_gripper_to(point)

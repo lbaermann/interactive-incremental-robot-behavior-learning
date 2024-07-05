@@ -1,0 +1,10 @@
+dialogue: <Commander> stack the blocks on the top most bowl
+Python script:
+bowl_names = [name for name in get_obj_names() if 'bowl' in name]
+bowl_positions = [get_obj_pos(name) for name in bowl_names]
+idx = np.argsort(bowl_positions[:, 1])[0]
+bowl = bowl_names[idx]
+block_names [name for name in get_obj_names() if 'block' in name]
+object_names = [bowl] + blocks
+for i in range(len(object_names) - 1):
+    put_first_on_second(object_names[i + 1], object_names[i])

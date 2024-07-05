@@ -1,0 +1,3 @@
+dialogue: <Commander> put the yellow one the green thing
+Python script:
+put_first_on_second('yellow block', 'green bowl')

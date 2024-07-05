@@ -1,0 +1,36 @@
+type: repl
+verbose: True
+max_rounds: 15
+reset_state_on_result_fn: False
+llm:
+  model_name: gpt-4
+  # model_name: gpt-3.5-turbo-0301
+  max_tokens: 400
+  temperature: 0
+  request_timeout: 30
+llm_kwargs:
+  stop:
+    - ">>>"
+    - "```"
+learn_from_interaction_cfg:
+  type: no-improve
+prompt_cfg:
+  base: base
+  suffix: suffix
+  loop_prevention: loop_prevention
+  sentence_similarity_model: "all-mpnet-base-v2"
+  prompt_separator: "\n"
+  custom_prompt_db_file: dynamic_prompt_db.json
+  top_k: 16
+  db:
+    - scenario.*
+    - learn.*
+api:
+  include_names:
+    - wait_for_trigger
+    - get_obj_names
+    - get_obj_pos
+    - denormalize_xy
+    - put_first_on_second
+import_lmps:
+  fgen: ../../common/fgen

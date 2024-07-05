@@ -1,0 +1,6 @@
+dialogue: <Commander> put the blocks into bowls with matching colors
+Python script:
+block_names = [name for name in get_obj_names() if 'block' in name]
+for block in block_names:
+    color = block.split(' ')[0]
+    put_first_on_second(block, color + ' bowl')

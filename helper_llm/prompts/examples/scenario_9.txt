@@ -1,0 +1,7 @@
+dialogue: <Commander> move the left most block to the green bowl
+Python script:
+block_names = [name for name in get_obj_names() if 'block' in name]
+block_positions = np.array([get_obj_pos(name) for name in block_names])
+idx = np.argsort(block_positions[:, 0])[0]
+block = block_names[idx]
+put_first_on_second(block, 'green bowl')

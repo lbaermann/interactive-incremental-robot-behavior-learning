@@ -1,0 +1,13 @@
+dialogue: <Commander> place the blue block in the empty bowl
+Python script:
+block_names = [name for name in get_obj_names() if 'block' in name]
+bowl_names = [name for name in get_obj_names() if 'bowl' in name]
+empty_bowls = []
+for bowl in bowl_names:
+    empty = True
+    for block in block_names:
+        if np.linalg.norm(get_obj_pos(block) - get_obj_pos(bowl)) < 0.05:
+            empty = False
+    if empty:
+        empty_bowls.append(bowl)
+put_first_on_second('blue block', empty_bowls[0])

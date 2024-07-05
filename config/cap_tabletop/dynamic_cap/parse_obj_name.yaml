@@ -1,0 +1,37 @@
+type: dynamic_cap_lmp
+max_tokens: 512
+temperature: 0
+query_prefix: "# "
+query_suffix: "."
+return_val_name: ret_val
+signature:
+  parameters:
+    - name: natural_language_description
+      type: str
+  return:
+    List[str]
+  comment:
+    resolve a NL description to a list of object ids
+prompt_cfg:
+  base: base_parse_obj_name
+  sentence_similarity_model: "all-mpnet-base-v2"
+  custom_prompt_db_file: parse_obj_name.dynamic_prompt_db.json
+  top_k: 8
+  db:
+    - parse_obj_name.*
+llm:
+  type: ChatOpenAI
+  model_name: gpt-4-0613
+  max_tokens: 512
+  temperature: 0
+stop:
+  - "# "
+  - "objects = ["
+maintain_session: false
+include_context: true
+context_vars:
+  objects: get_obj_names
+api:
+  include_all: True
+import_lmps:
+  fgen: ../original/fgen

@@ -1,0 +1,28 @@
+type: dynamic_cap_lmp
+max_tokens: 512
+temperature: 0
+query_prefix: "# "
+query_suffix: "."
+prompt_cfg:
+  base: base_main
+  sentence_similarity_model: "all-mpnet-base-v2"
+  custom_prompt_db_file: main.dynamic_prompt_db.json
+  top_k: 16
+  db:
+    - main.*
+llm:
+  type: ChatOpenAI
+  model_name: gpt-4-0613
+  max_tokens: 512
+  temperature: 0
+stop:
+  - "# "
+  - "objects = ["
+maintain_session: true
+include_context: true
+context_vars:
+  objects: get_obj_names
+import_lmps:
+  fgen: ../original/fgen
+  parse_position: parse_position
+  parse_obj_name: parse_obj_name

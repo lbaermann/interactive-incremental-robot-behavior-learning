@@ -1,0 +1,6 @@
+dialogue: <Commander> move the brown bowl to the closest side
+Python script:
+side_positions_normalized = [[0.0, 0.5], [1.0, 0.5], [0.5, 0.0], [0.5, 1.0]]
+side_positions_real = np.array([denormalize_xy(side) for side in side_positions_normalized])
+closest_idx = np.argmin(np.linalg.norm(side_positions_real - get_obj_pos('brown bowl'), axis=1))
+put_first_on_second('brown bowl', side_positions_real[idx])
