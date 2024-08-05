@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Interactive Incremental Robot Behavior Learning</title>
+
+    <meta name="author" content="Jon Barron">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data/favicon.ico" type="image/x-icon">
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+</head>
+
+<body>
+<table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+    <tr style="padding:0px">
+        <td style="padding:0px">
+            <p class="name" style="text-align: center;">
+                Incremental Learning of Humanoid Robot Behavior from Natural Interaction and Large Language
+                Models
+            </p>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <ul class="list-inline">
+                        <br>
+                        <li>Leonard Bärmann</li>
+                        <li>Rainer Kartmann</li>
+                        <li>Fabian Peller-Konrad</li>
+                        <li>Jan Niehues</li>
+                        <li>Alex Waibel</li>
+                        <li>Tamim Asfour</li>
+                    </ul>
+                    <a href="//kit.edu">
+                        <image src="data/kit.svg" height="40px"></image>
+                        Karlsruhe Institute of Technology
+                    </a>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="row justify-content-md-center">
+                <div class="col-md-2 text-center">
+                    <a href="https://arxiv.org/abs/2309.04316">
+                        <image src="data/paper_small.png" height="60px"></image>
+                        <h4><strong>Paper</strong></h4>
+                    </a>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="https://github.com/lbaermann/interactive-incremental-robot-behavior-learning">
+                        <image src="data/github.png" height="60px"></image>
+                        <h4><strong>Code</strong></h4>
+                    </a>
+                </div>
+            </div>
+
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
+                <tr>
+                    <td style="padding:20px;width:100%;vertical-align:middle">
+                        <h2>Abstract</h2>
+                        <p>
+                            Natural-language dialog is key for intuitive human-robot interaction. It can be used not
+                            only to express humans' intents, but also to communicate instructions for improvement if a
+                            robot does not understand a command correctly. Of great importance is to let robots learn
+                            from such interaction experience in an incremental way to allow them to improve their
+                            behaviors or avoid mistakes in the future. In this paper, we propose a system to achieve
+                            such incremental learning of complex behavior from natural interaction, and demonstrate its
+                            implementation on a humanoid robot. Our system deploys Large Language Models (LLMs) for
+                            high-level orchestration of the robot's behavior, based on the idea of enabling the LLM to
+                            generate Python statements in an interactive console to invoke both robot perception and
+                            action. Human instructions, environment observations, and execution results are fed back to
+                            the LLM, thus informing the generation of the next statement. Specifically, we introduce
+                            incremental learning from interaction, which enables the system to learn from its mistakes.
+                            For that purpose, the LLM can call another LLM responsible for code-level improvements of
+                            the current interaction based on human feedback. Subsequently, we store the improved
+                            interaction in the robot's memory so that it can later be retrieved on semantically similar
+                            requests. We integrate the system in the robot cognitive architecture of the humanoid robot
+                            ARMAR-6 and evaluate our methods both quantitatively (in simulation) and qualitatively (in
+                            simulation and real-world) by demonstrating generalized incrementally-learned knowledge.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <h2>Real-world demonstrations</h2>
+                    <p>To demonstrate the utility of our proposed prompt-based incremental learning technique, we
+                        perform experiments on the real-world humanoid robot ARMAR-VI.
+                        We first provide challenging commands which the LLM initially solves incompletely or wrong.
+                        Then, the human interactively provides feedback and tells the robot how to improve.
+                        Afterward, we not only provide the same command again to check for improved behavior, but -- in
+                        order to study generalization -- also try similar commands that initially (\ie, before learning)
+                        led to similar mistakes.
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <h4>Improving Plans</h4>
+                    <video width="100%" playsinline controls>
+                        <source src="data/drink-cup.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-md-12">
+                    <h4>Learning User Preferences</h4>
+                    <video width="100%" playsinline controls>
+                        <source src="data/ladder.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-md-12">
+                    <h4>Adapting Low-Level Parameters</h4>
+                    <video width="100%" playsinline controls>
+                        <source src="data/speed.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-md-12">
+                    <h4>Room Tour</h4>
+                    <video width="100%" playsinline controls>
+                        <source src="data/roomtour-video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row justify-content-md-center">
+                <div class="col-md-12">
+                    <h3>
+                        Citation
+                    </h3>
+                    <a href="https://arxiv.org/abs/2309.04316">[arxiv version]</a>
+                    <div class="form-group col-md-12">
+                    <textarea id="bibtex" class="form-control" rows="8" readonly>
+@inproceedings{baermann2023,
+    title={Incremental Learning of Humanoid Robot Behavior from Natural Interaction and Large Language Models},
+    author={Leonard Bärmann and Rainer Kartmann and Fabian Peller-Konrad and Jan Niehues and Alex Waibel and Tamim Asfour},
+    booktitle={arXiv preprint arXiv:2309.04316},
+    year={2023}
+}</textarea>
+                    </div>
+                </div>
+            </div>
+
+
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
+                <tr>
+                    <td style="padding:0px">
+                        <br>
+                        <p style="text-align:right;font-size:small;">
+                            This website is based on <a href="https://github.com/jonbarron/jonbarron_website">Jon
+                            Barron's source code</a>.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

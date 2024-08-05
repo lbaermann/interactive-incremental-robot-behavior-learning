@@ -1,7 +1,0 @@
-dialogue: <Commander> move the block closest to the purple bowl to the cyan bowl.
-Python script:
-block_names = [name for name in get_obj_names() if 'block' in name]
-block_positions = [get_obj_pos(name) for name in block_names]
-closest_idx = np.argmin(np.linalg.norm(block_positions - get_obj_pos('cyan bowl'), axis=1))
-block = block_names[idx]
-put_first_on_second(block, 'cyan bowl')

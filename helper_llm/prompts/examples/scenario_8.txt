@@ -1,6 +1,0 @@
-dialogue: <Commander> point gripper to the corner closest to the yellow block
-Python script:
-corner_positions_normalized = [[0.0, 0.0], [1.0, 0.0], [0.0, 1.0], [1.0, 1.0]]
-corner_positions_real = np.array([denormalize_xy(corner) for corner in corner_positions_normalized])
-closest_idx = np.argmin(np.linalg.norm(corner_positions_real - get_obj_pos('yellow block'), axis=1))
-point_gripper_to(corner_positions_real[idx])
