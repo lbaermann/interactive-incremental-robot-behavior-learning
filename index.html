@@ -57,35 +57,31 @@
                 </div>
             </div>
 
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                <tr>
-                    <td style="padding:20px;width:100%;vertical-align:middle">
-                        <h2>Abstract</h2>
-                        <p>
-                            Natural-language dialog is key for intuitive human-robot interaction. It can be used not
-                            only to express humans' intents, but also to communicate instructions for improvement if a
-                            robot does not understand a command correctly. Of great importance is to let robots learn
-                            from such interaction experience in an incremental way to allow them to improve their
-                            behaviors or avoid mistakes in the future. In this paper, we propose a system to achieve
-                            such incremental learning of complex behavior from natural interaction, and demonstrate its
-                            implementation on a humanoid robot. Our system deploys Large Language Models (LLMs) for
-                            high-level orchestration of the robot's behavior, based on the idea of enabling the LLM to
-                            generate Python statements in an interactive console to invoke both robot perception and
-                            action. Human instructions, environment observations, and execution results are fed back to
-                            the LLM, thus informing the generation of the next statement. Specifically, we introduce
-                            incremental learning from interaction, which enables the system to learn from its mistakes.
-                            For that purpose, the LLM can call another LLM responsible for code-level improvements of
-                            the current interaction based on human feedback. Subsequently, we store the improved
-                            interaction in the robot's memory so that it can later be retrieved on semantically similar
-                            requests. We integrate the system in the robot cognitive architecture of the humanoid robot
-                            ARMAR-6 and evaluate our methods both quantitatively (in simulation) and qualitatively (in
-                            simulation and real-world) by demonstrating generalized incrementally-learned knowledge.
-                        </p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Abstract</h2>
+                    <p>
+                        Natural-language dialog is key for intuitive human-robot interaction. It can be used not
+                        only to express humans' intents, but also to communicate instructions for improvement if a
+                        robot does not understand a command correctly. Of great importance is to let robots learn
+                        from such interaction experience in an incremental way to allow them to improve their
+                        behaviors or avoid mistakes in the future. In this paper, we propose a system to achieve
+                        such incremental learning of complex behavior from natural interaction, and demonstrate its
+                        implementation on a humanoid robot. Our system deploys Large Language Models (LLMs) for
+                        high-level orchestration of the robot's behavior, based on the idea of enabling the LLM to
+                        generate Python statements in an interactive console to invoke both robot perception and
+                        action. Human instructions, environment observations, and execution results are fed back to
+                        the LLM, thus informing the generation of the next statement. Specifically, we introduce
+                        incremental learning from interaction, which enables the system to learn from its mistakes.
+                        For that purpose, the LLM can call another LLM responsible for code-level improvements of
+                        the current interaction based on human feedback. Subsequently, we store the improved
+                        interaction in the robot's memory so that it can later be retrieved on semantically similar
+                        requests. We integrate the system in the robot cognitive architecture of the humanoid robot
+                        ARMAR-6 and evaluate our methods both quantitatively (in simulation) and qualitatively (in
+                        simulation and real-world) by demonstrating generalized incrementally-learned knowledge.
+                    </p>
+                </div>
+            </div>
 
             <div class="row">
 
@@ -96,8 +92,8 @@
                         We first provide challenging commands which the LLM initially solves incompletely or wrong.
                         Then, the human interactively provides feedback and tells the robot how to improve.
                         Afterward, we not only provide the same command again to check for improved behavior, but -- in
-                        order to study generalization -- also try similar commands that initially (\ie, before learning)
-                        led to similar mistakes.
+                        order to study generalization -- also try similar commands that initially (i.e., before
+                        learning) led to similar mistakes.
                     </p>
                 </div>
                 <div class="col-md-12">
