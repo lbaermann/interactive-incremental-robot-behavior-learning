@@ -44,7 +44,7 @@
             <br/>
             <div class="row justify-content-md-center">
                 <div class="col-md-2 text-center">
-                    <a href="https://arxiv.org/abs/2309.04316">
+                    <a href="https://doi.org/10.3389/frobt.2024.1455375">
                         <image src="data/paper_small.png" height="60px"></image>
                         <h4><strong>Paper</strong></h4>
                     </a>
@@ -130,13 +130,18 @@
                         Citation
                     </h3>
                     <a href="https://arxiv.org/abs/2309.04316">[arxiv version]</a>
+                    <a href="https://doi.org/10.3389/frobt.2024.1455375">[Journal version]</a>
                     <div class="form-group col-md-12">
                     <textarea id="bibtex" class="form-control" rows="8" readonly>
-@inproceedings{baermann2023,
-    title={Incremental Learning of Humanoid Robot Behavior from Natural Interaction and Large Language Models},
-    author={Leonard Bärmann and Rainer Kartmann and Fabian Peller-Konrad and Jan Niehues and Alex Waibel and Tamim Asfour},
-    booktitle={arXiv preprint arXiv:2309.04316},
-    year={2023}
+@article{baermann_2024_incremental,
+    author = {Bärmann, Leonard  and Kartmann, Rainer  and Peller-Konrad, Fabian  and Niehues, Jan  and Waibel, Alex  and Asfour, Tamim},
+    title = {Incremental Learning of Humanoid Robot Behavior from Natural Interaction and Large Language Models},
+    journal = {Frontiers in Robotics and AI},
+    volume = {11},
+    year = {2024},
+    url = {https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1455375},
+    doi = {10.3389/frobt.2024.1455375},
+    issn = {2296-9144},
 }</textarea>
                     </div>
                 </div>
@@ -159,5 +164,8 @@
         </td>
     </tr>
 </table>
+<script>
+    document.getElementById('bibtex').onclick = ev => ev.target.select();
+</script>
 </body>
 </html>
